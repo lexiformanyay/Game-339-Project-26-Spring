@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Game339.Shared.Diagnostics;
 
@@ -17,6 +18,15 @@ namespace Game339.Shared.Services.Implementation
             var output = new string(input.Reverse().ToArray());
             _log.Info($"{nameof(StringService)}.{nameof(Reverse)} - {nameof(input)}: {input} - {nameof(output)}: {output}");
             return output;
+        }
+        
+        public static string ReverseWords(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return input;
+            string[] words = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            Array.Reverse(words);
+            return string.Join(" ", words);
         }
     }
 }
