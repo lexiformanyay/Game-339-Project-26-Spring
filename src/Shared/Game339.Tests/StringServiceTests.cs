@@ -19,10 +19,10 @@ public class StringServiceTests
     [TestCase("racecar", "racecar")]
     public void Reverse_ReturnsExpectedString(string input, string expected)
     {
-        // Act
+        // act
         var result = _svc.Reverse(input);
 
-        // Assert
+        // assert
         Assert.That(result, Is.EqualTo(expected));
     }
 
